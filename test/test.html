@@ -1,0 +1,54 @@
+<html>
+    <head>flyRender测试</head>
+    <body>
+        <div id="app"></div>
+    <script id="tpl-str" type="text/html">
+        <div id="#{name}">
+            hi, #{name}.
+            <for items="#{books}" item="#{book}">
+                <div>第#{(i+1)}本书名是#{book.name}</div>
+            </for>
+        </div>
+    </script>
+    <script src="../bin/flyRender.min.js"></script>
+    <script>
+        var olddata = {
+                name: 'ailin',
+                books: [
+                    {
+                        name: 'harry potter'
+                    },
+                    {
+                        name: '围城'
+                    }
+                ]
+            }
+        var render = new FlyRender({
+            template: document.getElementById('tpl-str').innerHTML,
+            app: document.getElementById('app')
+        });
+
+        render.firstPaint({data:olddata});
+    </script>
+    </body>
+</html>
+<!--<html>
+    <body>
+        <script src="../bin/flyRender.min.js"></script>
+
+        <div id="#app"><div>
+        <script id="tpl-user" type="text/html">
+        hi, <%= name %>
+        </script>
+
+        <script>
+            var render = new FlyRender({
+                template: 'hi, #{name}',
+                app: document.getElementById('app')
+            });
+
+            render.firstPaint({data: {name: 'ailin'}});
+        </script>
+
+    </body>
+</html>-->

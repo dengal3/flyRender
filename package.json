@@ -1,0 +1,12 @@
+{
+  "name": "omvvm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "parser.js",
+  "scripts": {
+    "test": "mocha test/app.test.js",
+    "build": "webpack -p"
+  },
+  "author": "irenedeng",
+  "license": "MIT"
+}

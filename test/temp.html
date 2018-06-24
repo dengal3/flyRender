@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <textarea name="" id="input" cols="50" rows="100"></textarea>
+        <button id="triggerTrimBtn"></button>
+        <textarea name="" id="output" cols="50" rows="100"></textarea>
+        <script>
+            document.getElementById('triggerTrimBtn').onclick = function() {
+                var input = document.getElementById('input').value;
+                var str = input.replace(/\s/g, '');
+                document.getElementById('output').value = str;
+            }
+        </script>
+    </body>
+</html>
